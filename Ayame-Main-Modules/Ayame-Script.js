@@ -12,7 +12,8 @@ function AyameScript() {
   const AnimeMemeCommand = require('./src/Commands/Anime/AnimeMeme.js');
   
   /*Functions for Cmds - */
-  EmbedTemplate = require('./src/Functions/EmbedTemplate.js');
+  const EmbedTemplate = require('./src/Functions/EmbedTemplate.js'),
+        AnimeMemeFunction = require('./src/Functions/AnimeRedditMeme.js');
   
   /*Emojis - */
   const { notice } = require('./Emojis.js');
@@ -30,7 +31,7 @@ function AyameScript() {
     const args = msg.content.slice(Prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
     
-    if(command === 'animememe') AnimeMemeCommand(msg, args, notice, Discord, AyameClient, Db, EmbedTemplate, Fetch);
+    if(command === 'animememe') AnimeMemeCommand(msg, args, notice, Discord, AyameClient, Db, EmbedTemplate, Fetch, AnimeMemeFunction);
   })
   
   AyameClient.login(process.env.DISCORD_TOKEN)
