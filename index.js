@@ -13,6 +13,7 @@ console.log(`Ayame Port - http://localhost:${port}`)
 );
 
 var AyameCore = require('./Ayame-Core/core-start.js'),
-    AyameScript = require('./Ayame-Main-Modules/Ayame-Script.js');
+    AyameScript = require('./Ayame-Main-Modules/Ayame-Script.js'),
+    Token = process.env.DISCORD_TOKEN;
     
-AyameCore(AyameScript);
+AyameCore(AyameScript, Token);
