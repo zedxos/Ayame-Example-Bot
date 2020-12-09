@@ -6,6 +6,7 @@ function AyameScript() {
         AyameReady = require('./Event-Checker/ready.js'),
         Db = require('quick.db'),
         Fetch = require('node-fetch'),
+        Token = process.env.DISCORD_TOKEN,
         Prefix = 'a!';
   
   /*Commands - */
